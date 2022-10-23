@@ -1,0 +1,48 @@
+// imports
+import std;
+
+// comment
+/* comment */
+
+// language definitions
+<label> (<argument> <type> [,...]) => <return_types> {
+    <code>
+}
+
+// labeled anonymous function
+exp (a usize, b usize) => usize {
+    () => usize {
+        a^b;
+    }
+}
+
+someFn exp(2, 2);
+someFn();
+
+some_number usize 2;
+some_number;
+
+// fibonacci numbers
+import std;
+fib (n int) => int {
+    if (n <= 1)
+        n
+    fib(n - 1) + fib(n - 1)
+}
+// vs (both still work!)
+// ; == don't return this
+// !; == retrun this
+fib (n int) => int if (n <= 1) n else fib(n - 1) + fib(n - 1)
+
+main () => std.println(fib(9))
+
+// definitions
+number int;
+number int 9;
+
+number 8;
+string "hello world";
+boolean true;
+
+n int number + 2
+

@@ -1,4 +1,4 @@
-.PHONY = run jit build-llvm disassemble-llvm disassemble-native assemble-native run-binary
+.PHONY = run jit build-llvm disassemble-llvm disassemble-native assemble-native run-binary clean
 
 hello: hello.c
 	clang -O3 -emit-llvm hello.c -c -o hello.bc
@@ -20,3 +20,10 @@ assemble-native: hello
 
 run-binary: assemble-native
 	./hello.native
+
+clean:
+	-rm hello
+	-rm hello.bc
+	-rm hello.ll
+	-rm hello.native
+	-rm hello.s
